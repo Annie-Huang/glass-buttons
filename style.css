@@ -1,0 +1,31 @@
+:root {
+  --bg: hsl(221, 37%, 10%);
+  --button-text: hsl(200, 60%, 12%);
+  --button-1-surface: hsl(197, 88%, 58%);
+  --button-2-surface: hsl(41, 96%, 56%);
+}
+
+html {
+  color-scheme: dark;
+  font-family: system-ui;
+  font-size: 2rem;
+  background: var(--bg);
+}
+body {
+  min-height: 80vh;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  place-items: center;
+}
+
+.glassy-button {
+  cursor: pointer;
+  font: inherit;
+  color: var(--button-text);
+  font-weight: 500;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  background-color: transparent;
+}
