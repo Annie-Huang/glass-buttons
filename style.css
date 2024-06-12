@@ -34,9 +34,20 @@ body {
   &::after {
     content: '';
     position: absolute;
+    z-index: -1; /* so we can see the button text */
     inset: 0;
     border-radius: inherit;
     background-color: var(--_surface);
+  }
+
+  /* Move the top layer up and bottom layer down when it's on hover */
+  &:hover,
+  &:focus-visible {
+    translate: 0 -0.5rem;
+
+    &::after {
+      translate: 0 0.65rem;
+    }
   }
 }
 
