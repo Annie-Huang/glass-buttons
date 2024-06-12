@@ -27,7 +27,17 @@ body {
   padding: 1rem 1.5rem;
   border: 0;
   border-radius: 1rem;
-  background-color: var(--_surface);
+  background-color: transparent;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--_surface);
+  }
 }
 
 .glassy-button:nth-of-type(1) {
