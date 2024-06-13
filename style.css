@@ -28,8 +28,14 @@ body {
   border: 0;
   border-radius: 1rem;
   background-color: transparent;
+  /*background-color: coral;*/
 
   position: relative;
+
+  span {
+    /* Solution: keep the background-color to be transparent in the parent level and change it to coral in the span level so the stacking context will not effect the background color shift */
+    background-color: coral;
+  }
 
   &::after {
     content: '';
@@ -38,11 +44,16 @@ body {
     inset: 0;
     border-radius: inherit;
     background-color: var(--_surface);
+    transition: translate 200ms;
   }
 
   /* Move the top layer up and bottom layer down when it's on hover */
   &:hover,
   &:focus-visible {
+    /* You will create a new stacking context when you add the translate, that is why when you hover, you will see the background for button suddenly behind the psuedo element even though you set
+      background-color: coral;
+      in the .glassy-button evel
+     */
     translate: 0 -0.5rem;
 
     &::after {
