@@ -20,6 +20,9 @@ body {
 }
 
 .glassy-button {
+  --_padding: 1rem 1.5rem;
+  --_transition-speed: 200ms;
+
   cursor: pointer;
   font: inherit;
   color: var(--button-text);
@@ -39,9 +42,9 @@ body {
 
     /* translate (translate: 0 -0.5rem; on the hover state) does not work for inline element. so need to switch span to be a block element */
     display: block;
-    padding: 1rem 1.5rem;
+    padding: var(--_padding);
     border-radius: inherit;
-    transition: translate 200ms;
+    transition: translate var(--_transition-speed);
   }
 
   &::after {
@@ -51,7 +54,7 @@ body {
     inset: 0;
     border-radius: inherit;
     background-color: var(--_surface);
-    transition: translate 200ms;
+    transition: translate var(--_transition-speed);
   }
 
   /* Move the top layer up and bottom layer down when it's on hover */
