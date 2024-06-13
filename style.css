@@ -35,6 +35,10 @@ body {
   span {
     /* Solution: keep the background-color to be transparent in the parent level and change it to coral in the span level so the stacking context will not effect the background color shift */
     background-color: coral;
+
+    /* translate (translate: 0 -0.5rem; on the hover state) does not work for inline element. so need to switch span to be a block element */
+    display: block;
+    transition: translate 200ms;
   }
 
   &::after {
@@ -54,7 +58,10 @@ body {
       background-color: coral;
       in the .glassy-button evel
      */
-    translate: 0 -0.5rem;
+    /*translate: 0 -0.5rem;*/
+    span {
+      translate: 0 -0.5rem;
+    }
 
     &::after {
       translate: 0 0.65rem;
