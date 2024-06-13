@@ -24,7 +24,8 @@ body {
   font: inherit;
   color: var(--button-text);
   font-weight: 500;
-  padding: 1rem 1.5rem;
+  /*padding: 1rem 1.5rem;*/
+  padding: 0;
   border: 0;
   border-radius: 1rem;
   background-color: transparent;
@@ -38,6 +39,8 @@ body {
 
     /* translate (translate: 0 -0.5rem; on the hover state) does not work for inline element. so need to switch span to be a block element */
     display: block;
+    padding: 1rem 1.5rem;
+    border-radius: inherit;
     transition: translate 200ms;
   }
 
