@@ -46,7 +46,9 @@ body {
     display: block;
     padding: var(--_padding);
     border-radius: inherit;
-    transition: translate var(--_transition-speed);
+    transition: background-color var(--_transition-speed),
+      backdrop-filter var(--_transition-speed),
+      translate var(--_transition-speed);
   }
 
   &::after {
