@@ -23,6 +23,14 @@ body {
   --_padding: 1rem 1.5rem;
   --_transition-speed: 200ms;
 
+  --_hover-opacity: 0.4;
+  --_pressed-opacity: 0.15;
+  --_hover-blurriness: 5px;
+  --_pressed-blurriness: 10px;
+
+  --_hover-offset: 0.5rem;
+  --_pressed-offset: 0.25rem;
+
   cursor: pointer;
   font: inherit;
   color: var(--button-text);
@@ -71,9 +79,9 @@ body {
      */
     /*translate: 0 -0.5rem;*/
     span {
-      translate: 0 -0.5rem;
-      background-color: hsl(0 0% 100% / 0.4);
-      backdrop-filter: blur(5px);
+      translate: 0 calc(var(--_hover-offset) * -1);
+      background-color: hsl(0 0% 100% / var(--_hover-opacity));
+      backdrop-filter: blur(var(--_hover-blurriness));
     }
 
     &::after {
