@@ -38,7 +38,9 @@ body {
 
   span {
     /* Solution: keep the background-color to be transparent in the parent level and change it to coral in the span level so the stacking context will not effect the background color shift */
-    background-color: coral;
+    /*background-color: coral;*/
+    background-color: hsl(0 0% 100% / 0);
+    backdrop-filter: blur(0px);
 
     /* translate (translate: 0 -0.5rem; on the hover state) does not work for inline element. so need to switch span to be a block element */
     display: block;
@@ -62,11 +64,13 @@ body {
   &:focus-visible {
     /* You will create a new stacking context when you add the translate, that is why when you hover, you will see the background for button suddenly behind the psuedo element even though you set
       background-color: coral;
-      in the .glassy-button evel
+      in the .glassy-button level
      */
     /*translate: 0 -0.5rem;*/
     span {
       translate: 0 -0.5rem;
+      background-color: hsl(0 0% 100% / 0.4);
+      backdrop-filter: blur(5px);
     }
 
     &::after {
