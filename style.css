@@ -58,7 +58,8 @@ body {
     inset: 0;
     border-radius: inherit;
     background-color: var(--_surface);
-    transition: translate var(--_transition-speed);
+    transition: scale var(--_transition-speed),
+      translate var(--_transition-speed);
   }
 
   /* Move the top layer up and bottom layer down when it's on hover */
@@ -76,7 +77,8 @@ body {
     }
 
     &::after {
-      translate: 0 0.65rem;
+      scale: 0.95; /* so it looks like pulling away from the 1st tier */
+      translate: 0 0.125rem;
     }
   }
 }
