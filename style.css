@@ -87,6 +87,7 @@ body {
     background-color: var(--_surface);
     transition: scale var(--_transition-speed),
       translate var(--_transition-speed);
+    animation: exit forwards var(--_transition-speed);
   }
 
   /* Move the top layer up and bottom layer down when it's on hover */
