@@ -28,6 +28,8 @@ body {
   --_hover-blurriness: 5px;
   --_pressed-blurriness: 10px;
 
+  --_frostiness: 0.3;
+
   --_hover-offset: 0.5rem;
   --_pressed-offset: 0.25rem;
 
@@ -99,7 +101,7 @@ body {
 
       /* glassier effect （磨砂）*/
       &::before {
-        opacity: 0.5;
+        opacity: var(--_frostiness);
       }
     }
 
