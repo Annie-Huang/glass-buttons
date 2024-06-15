@@ -116,7 +116,9 @@ body {
       translate: 0 0.125rem;
 
       /* Test the movement and it worked */
-      transform: translate(var(--_x-motion), var(--_y-motion));
+      /*transform: translate(var(--_x-motion), var(--_y-motion));*/
+      /* Problem with above is when it unhover, it will slap back into its origin position, we want a smooth transition */
+      animation: enter forwards var(--_transition-speed);
     }
   }
 
@@ -131,6 +133,23 @@ body {
       scale: 0.875;
       translate: 0 0.125rem;
     }
+  }
+}
+
+@keyframes enter {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(var(--_x-motion), var(--_y-motion));
+  }
+}
+@keyframes exit {
+  from {
+    transform: translate(var(--_x-motion), var(--_y-motion));
+  }
+  to {
+    transform: translate(0, 0);
   }
 }
 
