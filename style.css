@@ -59,12 +59,17 @@ body {
       backdrop-filter var(--_transition-speed),
       translate var(--_transition-speed);
 
+    /* If you ever have a background image and you need to play with the opacity, this is how you will do it. */
     &::before {
       content: '';
       position: absolute;
       inset: 0;
       z-index: -1;
       background-image: url("data:image/svg+xml, %3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 171 171' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.74' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
+      /* This is to create the glassier effect （磨砂）*/
+      opacity: 0;
+      transition: opacity var(--_transition-speed);
     }
   }
 
@@ -91,6 +96,11 @@ body {
       translate: 0 calc(var(--_hover-offset) * -1);
       background-color: hsl(0 0% 100% / var(--_hover-opacity));
       backdrop-filter: blur(var(--_hover-blurriness));
+
+      /* glassier effect （磨砂）*/
+      &::before {
+        opacity: 0.5;
+      }
     }
 
     &::after {
