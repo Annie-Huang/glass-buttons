@@ -11,5 +11,8 @@ glassyButtons.forEach((button) => {
     const offsetY = event.offsetY - centerY;
     // Then offsetX and offsetY will be the different from the center of the the button.
     // if we are right in the middle, offsetX offsetY will be 0 0. On the top left corner, it will have the most negative numbers and the bottom right corner has the most positive numbers
+
+    button.style.setProperty('--_x-motion', `${offsetX}px`);
+    button.style.setProperty('--_y-motion', `${offsetY}px`);
   });
 });
