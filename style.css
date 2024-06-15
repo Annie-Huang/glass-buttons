@@ -89,6 +89,19 @@ body {
       translate: 0 0.125rem;
     }
   }
+
+  &:active {
+    span {
+      translate: 0 calc(var(--_pressed-offset) * -1);
+      background-color: hsl(0 0% 100% / var(--_pressed-opacity));
+      backdrop-filter: blur(var(--_pressed-blurriness));
+    }
+
+    &::after {
+      scale: 0.875;
+      translate: 0 0.125rem;
+    }
+  }
 }
 
 .glassy-button:nth-of-type(1) {
