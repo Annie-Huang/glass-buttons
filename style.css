@@ -114,6 +114,9 @@ body {
     &::after {
       scale: 0.95; /* so it looks like pulling away from the 1st tier */
       translate: 0 0.125rem;
+
+      /* Test the movement and it worked */
+      transform: translate(var(--_x-motion), var(--_y-motion));
     }
   }
 
