@@ -33,6 +33,9 @@ body {
   --_hover-offset: 0.5rem;
   --_pressed-offset: 0.25rem;
 
+  /* Don't do this unless you have a very obvious focus state on your item*/
+  outline: 0;
+
   cursor: pointer;
   font: inherit;
   color: var(--button-text);
@@ -95,6 +98,9 @@ body {
      */
     /*translate: 0 -0.5rem;*/
     span {
+      /* I am so surprised Kevin can spot the different on the outline when the <button> is in focus-visible state.... */
+      outline: 1px solid hsl(0 0% 100% / 0.7);
+
       translate: 0 calc(var(--_hover-offset) * -1);
       background-color: hsl(0 0% 100% / var(--_hover-opacity));
       backdrop-filter: blur(var(--_hover-blurriness));
